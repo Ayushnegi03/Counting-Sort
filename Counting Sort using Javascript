@@ -1,0 +1,37 @@
+//Counting Sorting
+function CountingSort(Arr, Min, Max)
+  {
+    var i, z = 0, count = [];
+    for (i = Min; i <= Max; i++) {
+        count[i] = 0;
+    }
+    for (i=0; i < Arr.length; i++) {
+        count[Arr[i]]++;
+    }
+    for (i = Min; i <= Max; i++) {
+        while (count[i]-- > 0) {
+            Arr[z++] = i;
+        }
+    }
+ return Arr;
+}
+var Arra = [-3,-1,10,7,3, 0, 2,-6, 5, 4, 1]; 
+console.log(Arra.length);
+console.log("Original Array Elements"); 
+console.log(Arra); 
+console.log("Sorted Array Elements"); 
+console.log(CountingSort(Arra, 0, 10));
+//Output-
+//11
+//Original Array Elements
+//[
+//  -3, -1, 10, 7, 3,
+//   0,  2, -6, 5, 4,
+//   1
+//]
+//Sorted Array Elements
+//[
+//  0, 1,  2, 3, 4,
+//  5, 2, -6, 5, 4,
+//  1
+//]
